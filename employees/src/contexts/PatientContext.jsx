@@ -56,6 +56,8 @@ const PatientProvider = ({ children }) => {
     );
 };
 
+export { PatientProvider };
+
 export const usePatient = () => {
     return useContext(PatientContext);
 };

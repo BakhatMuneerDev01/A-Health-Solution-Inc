@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import { dummyMessages, dummyConversations } from "../utils/dummyUsers";
 
-const MessageContext = useContext();
+const MessageContext = createContext();
 
 const MessageProvider = ({ children }) => {
 
@@ -18,7 +18,7 @@ const MessageProvider = ({ children }) => {
     };
 
 
-    value = {
+    let value = {
         conversations,
         messages,
         selectedConverstion,
@@ -28,11 +28,13 @@ const MessageProvider = ({ children }) => {
     }
 
     return (
-        <MessageProvider.Provider value={value}>
+        <MessageContext.Provider value={value}>
             {children}
-        </MessageProvider.Provider>
+        </MessageContext.Provider>
     )
 };
+
+export { MessageProvider };
 
 
 export const useMessage = () => {
