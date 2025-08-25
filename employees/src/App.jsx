@@ -1,10 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 
 const App = () => {
   return (
-    <div className='bg-black text-white text-5xl font-bold'>This is a react App</div>
+    <>
+    <LoginPage /> 
+    </>
   )
 }
 

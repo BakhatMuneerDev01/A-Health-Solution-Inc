@@ -14,7 +14,7 @@ const InputField = ({
     return (
         <div className={`mb-5 ${className}`}>
             {label && (
-                <label className="block mb-1 font-medium text-gray-900 dark:text-gray-100">
+                <label className="block mb-1 font-medium text-sm text-black">
                     {label}
                     {required && <span className="ml-0.5 text-red-500">*</span>}
                 </label>
@@ -23,7 +23,6 @@ const InputField = ({
                 type={type}
                 className={`w-full px-3 py-2 border rounded text-sm transition-colors
           border-gray-300 focus:outline-none focus:border-blue-500
-          dark:bg-gray-700 dark:border-gray-600 dark:text-white
           ${error ? 'border-red-500 focus:border-red-500' : ''}`}
                 placeholder={placeholder}
                 value={value}

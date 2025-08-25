@@ -11,19 +11,19 @@ const Button = ({
   ...props 
 }) => {
   // Base classes for all buttons
-  const baseClasses = "border-none cursor-pointer font-medium transition-all duration-300 ease-in-out inline-flex items-center justify-center no-underline";
+  const baseClasses = "border-none cursor-pointer font-medium transition-all duration-300 ease-in-out inline-flex items-center justify-center no-underline rounded-md";
   
   // Variant classes
   const variantClasses = {
     primary: "bg-blue-600 text-white hover:bg-blue-700 disabled:hover:bg-blue-600",
-    secondary: "bg-gray-300 text-gray-800 hover:bg-gray-400 disabled:hover:bg-gray-300"
+    secondary: "bg-gray-300/50 text-gray-800 hover:bg-gray-400 disabled:hover:bg-gray-300"
   };
   
   // Size classes
   const sizeClasses = {
     small: "px-3 py-1.5 text-sm",
-    medium: "px-5 py-2.5 text-sm",
-    large: "px-7 py-3.5 text-base"
+    medium: "px-5 py-2 text-sm",
+    large: "px-8 py-2.5 text-base"
   };
   
   // Disabled state
