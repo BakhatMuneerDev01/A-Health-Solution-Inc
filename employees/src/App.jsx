@@ -1,12 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import LoginPage from './pages/LoginPage/LoginPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SignUpPage from './pages/SignupPage/SignUpPage';
 
 
 const App = () => {
   return (
     <>
-    <LoginPage /> 
+      <SignUpPage />
     </>
   )
 }

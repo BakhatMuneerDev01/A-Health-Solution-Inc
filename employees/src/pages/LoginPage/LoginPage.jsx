@@ -13,6 +13,7 @@ const LoginPage = () => {
     })
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [showPassword, setShowPassword] = useState(false)
 
     const { login } = useAuth();
     // const navigate = useNavigate();
@@ -27,7 +28,7 @@ const LoginPage = () => {
         if (error) setError('')
     };
 
-    const handleSubmint = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true)
         setError('')
@@ -48,7 +49,7 @@ const LoginPage = () => {
     return (
         <>
             <div className='min-h-screen flex items-center justify-center bg-gray-100'>
-                <div className='bg-white p-15 rounded-lg shadow-lg w-full max-w-md'>
+                <div className='bg-white p-14 rounded-lg shadow-lg w-full max-w-md'>
                     <div className='flex items-center justify-center'>
                         <img src={assets.healthlogo} alt="A Helth Logo" className='w-40 h-20' />
                     </div>
@@ -68,7 +69,7 @@ const LoginPage = () => {
                             Register
                         </Button>
                     </div>
-                    <form action="" onSubmit={handleSubmint}>
+                    <form action="" onSubmit={handleSubmit}>
                         <div className='relative'>
                             <InputField
                                 label="Username or Email"
@@ -84,7 +85,7 @@ const LoginPage = () => {
                         <div className='relative'>
                             <InputField
                                 label="Password"
-                                type="password"
+                                type={showPassword ? "text" : "password"}
                                 name="password"
                                 placeholder="Enter your password"
                                 className='mt-8'
@@ -92,8 +93,18 @@ const LoginPage = () => {
                                 onChange={handleInputChange}
                                 required
                             />
-                            <img src={assets.Eye} className='w-4 h-4 absolute top-9 right-3 cursor-pointer' />
+                            <img
+                                onClick={() => setShowPassword((prev) => !prev)}
+                                src={showPassword ? assets.Eye : assets.EyeClose}
+                                className='w-4 h-4 absolute top-9 right-3 cursor-pointer'
+                            />
                         </div>
+
+                        {error && (
+                            <p className="text-red-500 text-sm mt-3 mb-2 text-center">
+                                {error}
+                            </p>
+                        )}
 
                         <div className='text-right'>
                             <a href="" className='text-blue-600 text-sm'>Forget Password?</a>
